@@ -132,12 +132,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# The URL where static files will be accessible
+# URL للوصول إلى ملفات static
 STATIC_URL = '/static/'
 
-# If you want to use a custom folder for static files, e.g., "static" folder in the base directory
+# مجلد لتخزين الملفات الثابتة بعد جمعها باستخدام collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# مجلدات أخرى تحتوي على ملفات static أثناء التطوير
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Assuming "static" is in the base directory
+    BASE_DIR / 'static',  # مجلد "static" في جذر المشروع
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
