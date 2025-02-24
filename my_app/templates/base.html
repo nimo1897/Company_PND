@@ -113,7 +113,29 @@
 </script>
 
 
+<script>
+  // Get references to the modal and the button
+const addProductButton = document.getElementById('add-product');
+const modal = document.getElementById('addPRDModal');
+const closeModalButton = document.getElementById('XModal');
 
+// Open the modal when the "add product" button is clicked
+addProductButton.addEventListener('click', function() {
+    modal.classList.remove('hidden');  // Remove the 'hidden' class to show the modal
+});
+
+// Close the modal when the close button is clicked
+closeModalButton.addEventListener('click', function() {
+    modal.classList.add('hidden');  // Add the 'hidden' class to hide the modal
+});
+
+// Close the modal if clicking outside the modal content
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.classList.add('hidden');
+    }
+});
+</script>
 
     
 

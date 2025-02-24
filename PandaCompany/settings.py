@@ -135,12 +135,12 @@ USE_TZ = True
 # URL للوصول إلى ملفات static
 STATIC_URL = '/static/'
 
-# مجلد لتخزين الملفات الثابتة بعد جمعها باستخدام collectstatic
+#collectstatic
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# مجلدات أخرى تحتوي على ملفات static أثناء التطوير
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # مجلد "static" في جذر المشروع
+    BASE_DIR / 'static',  
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
