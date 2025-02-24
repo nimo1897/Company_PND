@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     
     #other apps
     'widget_tweaks',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# URL للوصول إلى ملفات static
+
 STATIC_URL = '/static/'
 
 #collectstatic
@@ -142,13 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  
 ]
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-# Path where uploaded media files will be stored
-MEDIA_URL = '/media/'
 
-# Directory path where media files will be saved on the server
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
@@ -158,3 +153,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'user_dashboard' # Redirect after successful login
 LOGOUT_REDIRECT_URL = '/' # Redirect after logout
 LOGIN_URL = '/' # URL for the login page
+
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dozv3bijj',
+    'API_KEY': '998165188896573',
+    'API_SECRET': 'vKaoqJQwC7BHtdvt7hBIRRVpw1k'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MEDIA_URL = '/media/'

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-
+from cloudinary.models import CloudinaryField
 
 
 
@@ -9,7 +9,7 @@ class Product(models.Model):
     choice_state = (('sold', 'Sold'), ('unsold', 'Unsold'))
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='products/')  
+    image = CloudinaryField('image')
     description = models.TextField()    
     estimated_cost = models.DecimalField(max_digits=10, decimal_places=2)    
     estimated_profit = models.DecimalField(max_digits=10, decimal_places=2)  
